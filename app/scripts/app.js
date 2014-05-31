@@ -17,8 +17,8 @@ angular.module('communiTaskApp', [
         templateUrl: 'views/new.html',
         controller: 'NewCtrl'
     })
-    .when('/task', {
-        templateUrl: 'view/task.html',
+    .when('/task/:id', {
+        templateUrl: 'views/task.html',
         controller: 'TaskCtrl'
     })
     .when('/complete', {
