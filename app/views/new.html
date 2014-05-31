@@ -10,7 +10,7 @@
                     </div>
                     <label>Images</label>
                     <div class="input-group">
-                        <input type="file" accept="image/*" image="images" multiple />
+                        <input type="file" accept="image/*" image="images" resize-max-height="300" resize-max-width="250" resize-quality="0.7" multiple />
                     </div>
 
                     <label>Location</label>
@@ -20,7 +20,7 @@
                             <button class="btn btn-default" type="button" ng-click="autoLocation()">Auto</button>
                         </span>
                     </div>
-                    <button class="btn btn-lg btn-success" ng-click="addTask()">Submit</button>
+                    <button class="btn btn-lg btn-success" ng-click="addTask()" ng-disabled="!(newTaskDesc && images && (gLat || manualLocation))">Submit</button>
                 </div>
             </div>
         </div>

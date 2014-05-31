@@ -14,8 +14,12 @@ angular.module('communiTaskApp')
             gLong: $scope.gLong || undefined,
             city: $scope.manualLocation,
             images: (function() {
-                var a = angular.forEach($scope.images, function(img) {
-                    return {img: img.dataUrl, type: img.type};
+                var a = [];
+                angular.forEach($scope.images, function(img) {
+                    a.push({
+                        url: img.resized.dataURL,
+                        type: img.resized.type
+                    });
                 });
                 return a;
             }())
@@ -29,6 +33,7 @@ angular.module('communiTaskApp')
             $scope.gLong = loc.coords.longitude;
 
             $scope.manualLocation = $scope.gLat + ', ' + $scope.gLong;
+            $scope.$apply();
         });
     };
 });
