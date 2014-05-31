@@ -1,15 +1,20 @@
 'use strict';
 
 angular.module('communiTaskApp')
-.directive('complete', function ($location, $timeout) {
+.directive('complete', function ($location, $timeout, $firebase) {
     return {
         templateUrl: 'views/complete.html',
         restrict: 'AE',
-        link: function postLink(scope, element, attrs) {
-            scope.submitComplete = function() {
-                $timeout(function() {
+        scope: {
+            task: '='
+        },
+        link: function postLink($scope, element, attrs) {
+
+            $scope.submitComplete = function() {
+
+                $scope.task.$remove().then(function() {
                     $location.path('/');
-                }, 500);
+                });
             };
         }
     };
