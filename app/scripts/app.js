@@ -27,7 +27,7 @@ angular.module('communiTaskApp', [
     })
     .when('/leaderboard', {
         templateUrl: 'view/leaderboard.html',
-        controller: 'LeaderboardCtrl'
+        controller: 'Leaderboard1Ctrl'
     })
     .otherwise({
         redirectTo: '/'
