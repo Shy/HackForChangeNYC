@@ -5,7 +5,7 @@ angular.module('communiTaskApp')
     return {
       templateUrl: 'views/new.html',
       restrict: 'AE',
-      link: function postLink($scope, element, attrs) {
+      link: function postLink($scope) {
         var taskRef = new Firebase('https://torid-fire-4640.firebaseio.com/task');
         $scope.tasks = $firebase(taskRef);
 
@@ -27,7 +27,15 @@ angular.module('communiTaskApp')
                     return a;
                 }())
             }).then(function() {
-                $location.url('/');
+                if ($location.path() !== '/') {
+                    $location.path('/');
+                } else {
+                    $scope.newTaskDesc = '';
+                    $scope.images = [];
+                    $scope.gLat = '';
+                    $scope.gLong = '';
+                    $scope.manualLocation = '';
+                }
             });
         };
 

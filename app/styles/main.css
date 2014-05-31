@@ -103,3 +103,13 @@ body {
     border-bottom: 0;
   }
 }
+
+.task-link {
+    display: block;
+    font-size: 30px;
+    color: black;
+}
+
+#task-carousel {
+    height: 60%;
+}

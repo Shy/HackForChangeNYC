@@ -6,16 +6,6 @@ angular.module('communiTaskApp')
 
     $scope.tasks = $firebase(taskRef);
 
-    $scope.addTask = function() {
-        $scope.tasks.$add({
-            desc: $scope.newTask,
-            completed: false,
-            gLat: 40.7127,
-            gLong: 74.0059
-        });
-        $scope.newTask = '';
-    };
-
 
     var auth = new FirebaseSimpleLogin(taskRef, function(error, user) {
         if (error) {
