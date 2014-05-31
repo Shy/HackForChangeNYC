@@ -2,15 +2,18 @@
 
 angular.module('communiTaskApp')
 .controller('MainCtrl', function ($scope, $firebase) {
-    var latestRef = new Firebase('https://torid-fire-4640.firebaseio.com/latest');
     var taskRef = new Firebase('https://torid-fire-4640.firebaseio.com/task');
-    var completedRef = new Firebase('https://torid-fire-4640.firebaseio.com/completed');
-    $scope.latest = $firebase(latestRef);
-    $scope.completed = $firebase(completedRef);
 
-    $scope.addLatest = function() {
-        $scope.latest.$add({desc: $scope.newLatest});
-        $scope.newLatest = '';
+    $scope.tasks = $firebase(taskRef);
+
+    $scope.addTask = function() {
+        $scope.tasks.$add({
+            desc: $scope.newTask,
+            completed: false,
+            gLat: 40.7127,
+            gLong: 74.0059
+        });
+        $scope.newTask = '';
     };
 
 
