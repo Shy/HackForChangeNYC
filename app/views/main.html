@@ -9,14 +9,33 @@
     </div>
 
 </div><!-- /.row -->
-<div class="row" ng-repeat="task in tasks">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10">
-        <h4>{{task.desc}}</h4>
-        <img ng-repeat="img in task.images" src="{{img.url}}" type="{{img.type}}">
-    </div>
-    <div class="col-lg-1"></div>
-</div>
+
+
+
+        <img >
+
+
+<div class="container">
+      <div class="row">
+
+
+        <div ng-repeat="task in tasks" class="col-md-4">
+          <div class="thumbnail">
+            <img ng-repeat="img in task.images | limitTo:1" src="{{img.url}}" type="{{img.type}}">
+              <div class="caption">
+                <h4>Task {{$index+1}}</h4>
+                <p>{{task.desc}}</p>
+                <a href="#" class="btn btn-default btn-xs pull-right" role="button"><i class="glyphicon glyphicon-edit"></i></a> <a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+            </div>
+          </div>
+        </div>
+
+
+  </div><!--/row-->
+</div><!--/container -->
+
+
+
 <div class="footer container text-center">
     <p>CommuniTask - <a class="text-danger" href="https://github.com/shy/hackforchangenyc">Github</a> by <a class="text-danger" href="https://twitter.com/@MattCmultiMedia">@MattCmultiMedia</a> &amp; <a class="text-danger" href="https://twitter.com/ShyRuparel">@ShyRuparel</a></p>
 </div>

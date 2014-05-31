@@ -20,6 +20,9 @@ input[readonly] {
   background-color: white !important;
   cursor: text !important;
 }
+.thumbnail {
+  padding:0;
+}
 
 /* Space out content a bit */
 body {
