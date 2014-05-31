@@ -11,6 +11,7 @@ angular.module('communiTaskApp')
 
         $scope.addTask = function() {
             $scope.tasks.$add({
+                dateAdded: new Date(),
                 desc: $scope.newTaskDesc,
                 completed: false,
                 gLat: $scope.gLat || undefined,

@@ -1,1 +1,47 @@
-<p>This is the complete view.</p>
+<div class="modal fade" id="completeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Complete Task</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-6">
+            <label>Before Images</label>
+            <div class="input-group">
+                <input type="text" class="form-control" readonly>
+                <span class="input-group-btn">
+                    <span class="btn btn-danger btn-file">
+                        <span class="glyphicon glyphicon-picture"></span> <input type="file" accept="image/*" image="beforeImages" resize-max-height="300" resize-max-width="250" resize-quality="0.7" multiple>
+                    </span>
+                </span>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <label>After Images</label>
+            <div class="input-group">
+                <input type="text" class="form-control" readonly>
+                <span class="input-group-btn">
+                    <span class="btn btn-danger btn-file">
+                        <span class="glyphicon glyphicon-picture"></span> <input type="file" accept="image/*" image="afterImages" resize-max-height="300" resize-max-width="250" resize-quality="0.7" multiple>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <label>Comments</label>
+            <div class="input-group">
+                <textarea ng-model="comment">
+
+                </textarea>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="submitComplete()" ng-disabled="!(beforeImages && afterImages && comment)">Complete Task!</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
