@@ -5,12 +5,21 @@ angular.module('communiTaskApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'firebase'
+    'firebase',
+    'imageupload'
 ]).config(function ($routeProvider) {
     $routeProvider
     .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+    })
+    .when('/new', {
+        templateUrl: 'views/new.html',
+        controller: 'NewCtrl'
+    })
+    .when('/task', {
+        templateUrl: 'view/task.html',
+        controller: 'TaskCtrl'
     })
     .otherwise({
         redirectTo: '/'
