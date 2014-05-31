@@ -16,11 +16,11 @@
 
         <div ng-repeat="task in tasks" class="col-md-4">
           <div class="thumbnail">
-            <img ng-repeat="img in task.images | limitTo:1" ng-src="{{img.url}}" type="{{img.type}}">
+            <img ng-repeat="img in task.images | limitTo:1" src="{{img.url}}" type="{{img.type}}" width="500" height="250">
               <div class="caption">
                 <h4>Task {{$index+1}}</h4>
                 <p>{{task.desc}}</p>
-                <a href="#" class="btn btn-default btn-xs pull-right" role="button"><i class="glyphicon glyphicon-edit"></i></a> <a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a>
+                <a href="#" class="btn btn-danger btn-xs pull-right" role="button">Claim</a> <a href="#" class="btn btn-default btn-xs" role="button">More info</a>
             </div>
           </div>
         </div>
