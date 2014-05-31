@@ -44,3 +44,4 @@ angular.module('communiTaskApp')
       }
     };
 });
+

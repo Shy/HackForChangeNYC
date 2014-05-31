@@ -1,26 +1,58 @@
 
-    <div class="row">
-        <div class="col-lg-10 col-lg-offset-1">
-            <div class="row">
-                <div class="col-lg-12">
-                    <label>Task Description</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" ng-model="newTaskDesc" placeholder="Description">
-                    </div>
-                    <label>Images</label>
-                    <div class="input-group">
-                        <input type="file" accept="image/*" image="images" resize-max-height="300" resize-max-width="250" resize-quality="0.7" multiple />
-                    </div>
 
-                    <label>Location</label>
-                    <div class="input-group">
-                        <input class="form-control" ng-model="manualLocation" placeholder="City, State">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button" ng-click="autoLocation()">Auto</button>
-                        </span>
-                    </div>
-                    <button class="btn btn-lg btn-success" ng-click="addTask()" ng-disabled="!(newTaskDesc && images && (gLat || manualLocation))">Submit</button>
-                </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-warning btn-file">
+                        <span class="glyphicon glyphicon-picture"></span> <input type="file" accept="image/*" image="images" resize-max-height="300" resize-max-width="250" resize-quality="0.7" multiple>
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="input-group">
+
+                <span class="input-group-btn">
+                    <button class="btn btn-warning" type="button" ng-click="autoLocation()"><span class="glyphicon glyphicon-map-marker"></span></button>
+                </span>
+                <input class="form-control" ng-model="manualLocation" placeholder="City, State">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="newTaskDesc" placeholder="Description">
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" ng-click="addTask()" ng-disabled="!(newTaskDesc && images && (gLat || manualLocation))">Submit</button>
+                </span>
             </div>
         </div>
     </div>
+
+
+<script type="text/javascript">
+
+    $(document)
+      .on('change', '.btn-file :file', function() {
+        var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
+
+    $(document).ready( function() {
+      $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+
+        var input = $(this).parents('.input-group').find(':text'),
+          log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+        if( input.length ) {
+          input.val(log);
+        } else {
+          if( log ) alert(log);
+        }
+
+      });
+    });
+</script>
