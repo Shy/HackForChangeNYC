@@ -1,15 +1,25 @@
 <div class="header">
-    <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#">Home</a></li>
-    </ul>
-    <button class="btn btn-lg btn-success" ng-click="login()">Login</button>
-    <h3 class="text-muted">HackForChangeNYC</h3>
+    <h1 class="text-center text-danger">CommuniTask</h1>
 </div>
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="newTask">
+            <span class="input-group-btn">
+            <button class="btn btn-danger" ng-click="addTask()" type="button">Submit</button>
+            </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-1"></div>
+</div><!-- /.row -->
 <div class="row" ng-repeat="task in tasks">
-    {{task.desc}}
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+        <h4>{{task.desc}}</h4>
+    </div>
+    <div class="col-lg-1"></div>
 </div>
-<input type="text" ng-model="newTask">
-<button type="btn btn-lg btn-success" ng-click="addTask()">Submit</button>
-<div class="footer container text-center"">
-    <p>CommuniTask - <a href="https://github.com/shy/hackforchangenyc">Github</a> by <a href="https://twitter.com/@MattCmultiMedia">@MattCmultiMedia</a> &amp; <a href="https://twitter.com/ShyRuparel">@ShyRuparel</a></p>
+<div class="footer container text-center navbar-fixed-bottom">
+    <p>CommuniTask - <a class="text-danger" href="https://github.com/shy/hackforchangenyc">Github</a> by <a class="text-danger" href="https://twitter.com/@MattCmultiMedia">@MattCmultiMedia</a> &amp; <a class="text-danger" href="https://twitter.com/ShyRuparel">@ShyRuparel</a></p>
 </div>
