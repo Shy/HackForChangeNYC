@@ -13,7 +13,9 @@ angular.module('communiTaskApp')
             $scope.submitComplete = function() {
 
                 $scope.task.$remove().then(function() {
-                    $location.path('/');
+                    $timeout(function() {
+                        $location.path('/');
+                    }, 400);
                 });
             };
         }
