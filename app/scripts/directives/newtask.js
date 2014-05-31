@@ -27,7 +27,15 @@ angular.module('communiTaskApp')
                     return a;
                 }())
             }).then(function() {
-                $location.url('/');
+                if ($location.path() !== '/') {
+                    $location.path('/');
+                } else {
+                    $scope.newTaskDesc = '';
+                    $scope.images = [];
+                    $scope.gLat = '';
+                    $scope.gLong = '';
+                    $scope.manualLocation = '';
+                }
             });
         };
 
