@@ -1,18 +1,18 @@
 'use strict';
 
 angular.module('communiTaskApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
-  .config(function ($routeProvider) {
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute',
+    'firebase'
+]).config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+    .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .otherwise({
+    })
+    .otherwise({
         redirectTo: '/'
-      });
-  });
+    });
+});
