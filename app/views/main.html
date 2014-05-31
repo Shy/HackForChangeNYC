@@ -9,9 +9,9 @@
     </div>
 
 </div><!-- /.row -->
-<div class="row" ng-repeat="task in tasks">
+<div class="row" ng-repeat="(key, task) in tasks">
     <div class="col-lg-10 col-lg-offset-1">
-        <h4>{{task.desc}}</h4>
+        <a class="task-link" ng-href="/task?id={{key}}">{{task.desc}}</a>
         <img ng-repeat="img in task.images" ng-src="{{img.url}}" type="{{img.type}}">
     </div>
     <div class="col-lg-1"></div>
