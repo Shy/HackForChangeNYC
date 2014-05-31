@@ -5,7 +5,7 @@ angular.module('communiTaskApp')
     return {
       templateUrl: 'views/new.html',
       restrict: 'AE',
-      link: function postLink($scope, element, attrs) {
+      link: function postLink($scope) {
         var taskRef = new Firebase('https://torid-fire-4640.firebaseio.com/task');
         $scope.tasks = $firebase(taskRef);
 
