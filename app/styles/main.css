@@ -113,3 +113,7 @@ body {
 #task-carousel {
     height: 60%;
 }
+
+#task-carousel {
+    margin-top: 50px;
+}
