@@ -21,6 +21,14 @@ angular.module('communiTaskApp', [
         templateUrl: 'view/task.html',
         controller: 'TaskCtrl'
     })
+    .when('/complete', {
+        templateUrl: 'view/complete.html',
+        controller: 'CompleteCtrl'
+    })
+    .when('/leaderboard', {
+        templateUrl: 'view/leaderboard.html',
+        controller: 'LeaderboardCtrl'
+    })
     .otherwise({
         redirectTo: '/'
     });
