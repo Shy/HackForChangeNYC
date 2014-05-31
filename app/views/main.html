@@ -10,8 +10,7 @@
 
 </div><!-- /.row -->
 <div class="row" ng-repeat="task in tasks">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10">
+    <div class="col-lg-10 col-lg-offset-1">
         <h4>{{task.desc}}</h4>
         <img ng-repeat="img in task.images" ng-src="{{img.url}}" type="{{img.type}}">
     </div>
